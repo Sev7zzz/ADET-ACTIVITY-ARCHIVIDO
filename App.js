@@ -1,15 +1,13 @@
-import { StatusBar } from "expo-status-bar";
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import TodoScreen from "./src/screen/TodoScreen";
+import React from "react";
+import TodoScreen from "../screen/TodoScreen";
+import { TodoProvider } from "../context/TodoContext";
 
-export default function App() {
+const App = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <TodoScreen />
-      </View>
-    </SafeAreaView>
+    <TodoProvider>
+      <TodoScreen />
+    </TodoProvider>
   );
-}
+};
 
-const styles = StyleSheet.create({});
+export default App;
